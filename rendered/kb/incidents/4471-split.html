@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../_app/immutable/entry/start.B7UNHmas.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.CjPEcSr2.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DLPHJf5b.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/CALOmXrz.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DgY_9mAE.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/B3ck760V.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.DSbb7cHo.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.D_vt70F-.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BnpOIMme.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BG5v0sKB.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DzrvIRbX.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CyMa8FXv.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.DjykM_qP.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DVJ5pYx9.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/5.B0-jETBA.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/J_renN1Z.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.D4Tf2VyA.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BLmQZsXj.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/6F5Jptlk.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BeNqf_tZ.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/0CSW6DJc.js" rel="modulepreload">
@@ -26,30 +26,31 @@
 		<link href="../../_app/immutable/assets/5.CMZ6TBbc.css" rel="stylesheet">
   </head>
   <body>
-    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · two problems in one ticket</h1> <p class="meta svelte-e2jw2j"><span>owner <b>jacksoncarl</b></span> <span class="status filed svelte-e2jw2j">filed</span> <span class="svelte-e2jw2j">reviewed 2026-10-31 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> is marked known, with one fix queued. It holds two problems, and that
-fix reaches only one of them. Each now has its own ticket.</p> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <p>The last column still says the smaller group has no ticket of its own. The table is built from the
-desk’s export, which does not know about the tickets below.</p> <h2>The two problems</h2> <ul><li><strong><a href="https://github.com/jacksoncarl/support-kb-4471/issues/1" rel="nofollow">Parser reads day-first dates month first</a>.</strong> A day-first tenant’s dates come out flipped. This is what #4471 describes, and the queued fix is for
-this one.</li> <li><strong><a href="https://github.com/jacksoncarl/support-kb-4471/issues/2" rel="nofollow">booking-v3 hints MM/DD/YYYY to day-first tenants</a>.</strong> The form’s hint tells people to type the month first, and the form then reads the date the tenant’s
-way. The parser is not involved, so fixing the parser leaves these bookings wrong.</li></ul> <aside class="warn svelte-17bri61"><!---->Do not close the second ticket when the parser fix ships. Check it against reports from the booking-v3
-form after the fix.<!----></aside><!----> <h2>How to tell them apart</h2> <p>Use the tenant and the channel: <code>src/lib/kb/causes.ts</code> decides. A report through the booking form of a
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · two problems in one ticket</h1> <p class="meta svelte-e2jw2j"><span>owner <b>jacksoncarl</b></span> <span class="status closed svelte-e2jw2j">closed</span> <span class="svelte-e2jw2j">reviewed 2026-10-31 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> was marked known, with one fix queued. It held two problems, and that
+fix reached only one of them. Engineering closed #4471 on 5 October with a different outcome for
+each problem, and each now has its own closed ticket.</p> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <p>The last column still says the smaller group has no ticket of its own. The table is built from the
+desk’s export, which does not know about the tickets below.</p> <h2>The two problems</h2> <ul><li><strong><a href="https://github.com/jacksoncarl/support-kb-4471/issues/1" rel="nofollow">Parser reads day-first dates month first</a>: fixed.</strong> A day-first tenant’s dates came out flipped. Engineering shipped <code>fix(dates): parse dd/mm for eu locales</code>.</li> <li><strong><a href="https://github.com/jacksoncarl/support-kb-4471/issues/2" rel="nofollow">booking-v3 hints MM/DD/YYYY to day-first tenants</a>: won’t fix.</strong> The form’s hint told people to type the month first, and the form then read the date the tenant’s
+way. The parser was not involved. Engineering retired the booking-v3 form instead of changing it.</li></ul> <aside class="warn svelte-17bri61"><!---->Do not report #4471 as one fixed bug. The parser fix does not cover the hint reports: they closed
+because the form was retired.<!----></aside><!----> <h2>How to tell them apart</h2> <p>Use the tenant and the channel: <code>src/lib/kb/causes.ts</code> decides. A report through the booking form of a
 tenant on booking-v3 is the hint problem. Every other report from a day-first tenant is the parser
 problem.</p> <p>Do not use these three things:</p> <ul><li><strong>The subject line.</strong> Decision 0001 merges on it, and both problems share the same subjects.</li> <li><strong>The intake tag.</strong> It is a guess from the reporter’s browser, and it disagrees with the tenant in
 both groups.</li> <li><strong>The raw row count.</strong> The export repeats some rows, so count each report id once.</li></ul> <p>The note under the table counts reports that read as a move of one day, not a flipped date. They are
-counted where the tenant files them. They do not have a ticket of their own yet, and the first ticket
-lists them to re-check after the parser fix.</p> <h2>What this page does not change</h2> <p><a href="/kb/decisions/0001-dedupe-by-subject">Decision 0001</a> stays as accepted: only a new record can replace
-it. The <a href="/kb/incidents/4471">#4471 page</a> belongs to the desk and is unchanged.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-QJS7-WF3G</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+counted where the tenant files them. They do not have a ticket of their own, and the first ticket
+lists them to re-check now that the parser fix has shipped.</p> <h2>What this page does not change</h2> <p><a href="/kb/decisions/0001-dedupe-by-subject">Decision 0001</a> stays as accepted: only a new record can replace
+it. The <a href="/kb/incidents/4471">#4471 page</a> belongs to the desk and is unchanged, so it still says the fix
+is queued.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-PP75-R1F9</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1frswqi = {
+					__sveltekit_2bj55q = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.B7UNHmas.js"),
-						import("../../_app/immutable/entry/app.DSbb7cHo.js")
+						import("../../_app/immutable/entry/start.CjPEcSr2.js"),
+						import("../../_app/immutable/entry/app.D_vt70F-.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],

@@ -2,9 +2,9 @@
 layout: runbook
 title: '#4471 · two problems in one ticket'
 owner: jacksoncarl
-status: filed
+status: closed
 reviewed: 2026-10-31
-signature: jacksoncarl
+signature: v1.eyJzdWIiOiIxMjg3NiIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkzNDY4ODE4LCJleHAiOjE3OTM1NTUyMTh9.mJ1rakqnQgVAGL_poEvC-XiCZl5blq5DkmEYz2yPJd4
 ---
 
 <script>
@@ -13,8 +13,9 @@ signature: jacksoncarl
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-[#4471](/kb/incidents/4471) is marked known, with one fix queued. It holds two problems, and that
-fix reaches only one of them. Each now has its own ticket.
+[#4471](/kb/incidents/4471) was marked known, with one fix queued. It held two problems, and that
+fix reached only one of them. Engineering closed #4471 on 5 October with a different outcome for
+each problem, and each now has its own closed ticket.
 
 <CauseTable ticket={4471} />
 
@@ -23,16 +24,16 @@ desk's export, which does not know about the tickets below.
 
 ## The two problems
 
-- **[Parser reads day-first dates month first](https://github.com/jacksoncarl/support-kb-4471/issues/1).**
-  A day-first tenant's dates come out flipped. This is what #4471 describes, and the queued fix is for
-  this one.
-- **[booking-v3 hints MM/DD/YYYY to day-first tenants](https://github.com/jacksoncarl/support-kb-4471/issues/2).**
-  The form's hint tells people to type the month first, and the form then reads the date the tenant's
-  way. The parser is not involved, so fixing the parser leaves these bookings wrong.
+- **[Parser reads day-first dates month first](https://github.com/jacksoncarl/support-kb-4471/issues/1): fixed.**
+  A day-first tenant's dates came out flipped. Engineering shipped
+  `fix(dates): parse dd/mm for eu locales`.
+- **[booking-v3 hints MM/DD/YYYY to day-first tenants](https://github.com/jacksoncarl/support-kb-4471/issues/2): won't fix.**
+  The form's hint told people to type the month first, and the form then read the date the tenant's
+  way. The parser was not involved. Engineering retired the booking-v3 form instead of changing it.
 
 <Callout kind="warn">
-Do not close the second ticket when the parser fix ships. Check it against reports from the booking-v3
-form after the fix.
+Do not report #4471 as one fixed bug. The parser fix does not cover the hint reports: they closed
+because the form was retired.
 </Callout>
 
 ## How to tell them apart
@@ -49,12 +50,13 @@ Do not use these three things:
 - **The raw row count.** The export repeats some rows, so count each report id once.
 
 The note under the table counts reports that read as a move of one day, not a flipped date. They are
-counted where the tenant files them. They do not have a ticket of their own yet, and the first ticket
-lists them to re-check after the parser fix.
+counted where the tenant files them. They do not have a ticket of their own, and the first ticket
+lists them to re-check now that the parser fix has shipped.
 
 ## What this page does not change
 
 [Decision 0001](/kb/decisions/0001-dedupe-by-subject) stays as accepted: only a new record can replace
-it. The [#4471 page](/kb/incidents/4471) belongs to the desk and is unchanged.
+it. The [#4471 page](/kb/incidents/4471) belongs to the desk and is unchanged, so it still says the fix
+is queued.
 
 <RenderStamp {signature} />
