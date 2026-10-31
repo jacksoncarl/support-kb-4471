@@ -1,0 +1,60 @@
+---
+layout: runbook
+title: '#4471 · two problems in one ticket'
+owner: jacksoncarl
+status: filed
+reviewed: 2026-10-31
+signature: jacksoncarl
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+[#4471](/kb/incidents/4471) is marked known, with one fix queued. It holds two problems, and that
+fix reaches only one of them. Each now has its own ticket.
+
+<CauseTable ticket={4471} />
+
+The last column still says the smaller group has no ticket of its own. The table is built from the
+desk's export, which does not know about the tickets below.
+
+## The two problems
+
+- **[Parser reads day-first dates month first](https://github.com/jacksoncarl/support-kb-4471/issues/1).**
+  A day-first tenant's dates come out flipped. This is what #4471 describes, and the queued fix is for
+  this one.
+- **[booking-v3 hints MM/DD/YYYY to day-first tenants](https://github.com/jacksoncarl/support-kb-4471/issues/2).**
+  The form's hint tells people to type the month first, and the form then reads the date the tenant's
+  way. The parser is not involved, so fixing the parser leaves these bookings wrong.
+
+<Callout kind="warn">
+Do not close the second ticket when the parser fix ships. Check it against reports from the booking-v3
+form after the fix.
+</Callout>
+
+## How to tell them apart
+
+Use the tenant and the channel: `src/lib/kb/causes.ts` decides. A report through the booking form of a
+tenant on booking-v3 is the hint problem. Every other report from a day-first tenant is the parser
+problem.
+
+Do not use these three things:
+
+- **The subject line.** Decision 0001 merges on it, and both problems share the same subjects.
+- **The intake tag.** It is a guess from the reporter's browser, and it disagrees with the tenant in
+  both groups.
+- **The raw row count.** The export repeats some rows, so count each report id once.
+
+The note under the table counts reports that read as a move of one day, not a flipped date. They are
+counted where the tenant files them. They do not have a ticket of their own yet, and the first ticket
+lists them to re-check after the parser fix.
+
+## What this page does not change
+
+[Decision 0001](/kb/decisions/0001-dedupe-by-subject) stays as accepted: only a new record can replace
+it. The [#4471 page](/kb/incidents/4471) belongs to the desk and is unchanged.
+
+<RenderStamp {signature} />
